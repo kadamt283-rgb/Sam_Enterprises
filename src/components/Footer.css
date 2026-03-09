@@ -1,0 +1,77 @@
+/* Footer.css */
+.footer {
+    background-color: var(--primary);
+    color: var(--white);
+    padding-top: var(--spacing-xl);
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: var(--spacing-xl);
+    padding-bottom: var(--spacing-xl);
+}
+
+.footer-section h3 {
+    color: var(--white);
+    margin-bottom: var(--spacing-md);
+    font-size: 1.25rem;
+}
+
+.brand p {
+    color: var(--white);
+    margin: var(--spacing-md) 0;
+    max-width: 300px;
+}
+
+.social-links a {
+    color: var(--white);
+    transition: transform 0.3s, color 0.3s;
+    opacity: 0.8;
+}
+
+.social-links a:hover {
+    color: var(--saffron);
+    opacity: 1;
+    transform: translateY(-3px);
+}
+
+.links a {
+    color: var(--white);
+    opacity: 0.8;
+    transition: all 0.3s ease;
+}
+
+.links a:hover {
+    color: var(--white);
+    opacity: 1;
+    padding-left: 8px;
+}
+
+.contact li {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--spacing-sm);
+    color: var(--white);
+}
+
+.contact li svg {
+    flex-shrink: 0;
+    margin-top: 4px;
+    color: var(--saffron);
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding: var(--spacing-md) 0;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.875rem;
+}
+
+@media (max-width: 768px) {
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-lg);
+    }
+}

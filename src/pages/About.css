@@ -1,0 +1,142 @@
+/* --- Section Pill Label --- */
+.section-pill {
+    display: inline-block;
+    background: rgba(255, 153, 51, 0.15);
+    color: var(--saffron);
+    border: 1px solid var(--saffron);
+    padding: 5px 18px;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-bottom: 12px;
+}
+
+/* --- About Intro Grid --- */
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: start;
+}
+
+.about-text-block h2 {
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--primary);
+    margin-bottom: 20px;
+    margin-top: 10px;
+}
+
+.about-text-block p {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: var(--text-main);
+    margin-bottom: 16px;
+}
+
+.en-para {
+    color: var(--text-muted);
+    font-style: italic;
+}
+
+.about-contact-quick {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 25px;
+}
+
+.about-quick-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-weight: 700;
+    color: var(--primary);
+    font-size: 1rem;
+}
+
+.about-quick-item svg {
+    color: var(--saffron);
+    font-size: 1.1rem;
+}
+
+/* --- Stats Grid --- */
+.about-stats-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.about-stat-card {
+    background: linear-gradient(135deg, var(--primary), #1e40af);
+    border-radius: 20px;
+    padding: 35px 20px;
+    text-align: center;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    transition: transform 0.3s ease;
+}
+
+.about-stat-card:hover {
+    transform: translateY(-8px);
+}
+
+.stat-big {
+    font-size: 2.5rem;
+    font-weight: 900;
+    color: var(--saffron);
+}
+
+.stat-lbl {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #cbd5e1;
+}
+
+/* --- Section Header Centered --- */
+.section-header-centered {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.section-header-centered h2 {
+    font-size: 2.2rem;
+    color: var(--primary);
+    font-weight: 800;
+    margin-top: 10px;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .about-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .about-text-block h2 {
+        font-size: 1.8rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .about-stats-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .section-header-centered h2 {
+        font-size: 1.6rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .about-text-block p {
+        font-size: 1rem;
+    }
+
+    .stat-big {
+        font-size: 2rem;
+    }
+}

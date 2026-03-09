@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 120">
+  <defs>
+    <linearGradient id="gold-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#C5A059;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#E6C87C;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#C5A059;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="red-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#D32F2F;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#B71C1C;stop-opacity:1" />
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="2" dy="2" stdDeviation="2" flood-color="#000" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+
+  <!-- Left Abstract Swoosh (Gold/Red Leaves) -->
+  <g transform="translate(10, 20)">
+    <path d="M10,50 Q0,20 40,10 C50,30 30,50 10,50 Z" fill="url(#red-gradient)" filter="url(#shadow)" />
+    <path d="M5,55 Q-5,30 30,25 C40,40 25,60 5,55 Z" fill="url(#gold-gradient)" transform="translate(-5, 5)" filter="url(#shadow)" />
+    <path d="M15,45 Q10,15 45,5 C55,25 35,45 15,45 Z" fill="none" stroke="url(#gold-gradient)" stroke-width="2" />
+  </g>
+
+  <!-- Main Text "SAM" -->
+  <text x="80" y="75" font-family="Arial, sans-serif" font-weight="900" font-size="70" fill="url(#red-gradient)" filter="url(#shadow)" letter-spacing="2">SAM</text>
+  
+  <!-- Subtext "ENTERPRISES" -->
+  <text x="82" y="98" font-family="Arial, sans-serif" font-weight="bold" font-size="14" fill="url(#red-gradient)" letter-spacing="6">ENTERPRISES</text>
+  <line x1="82" y1="105" x2="245" y2="105" stroke="url(#red-gradient)" stroke-width="2" />
+
+  <!-- Right Icon (Scales of Justice) -->
+  <g transform="translate(280, 25)">
+    <!-- Circle Container -->
+    <circle cx="35" cy="35" r="32" fill="none" stroke="url(#gold-gradient)" stroke-width="4" filter="url(#shadow)" />
+    <circle cx="35" cy="35" r="28" fill="none" stroke="#2a2a2a" stroke-width="1" opacity="0.1" />
+
+    <!-- Pillar -->
+    <rect x="32" y="15" width="6" height="40" fill="url(#red-gradient)" />
+    <rect x="25" y="55" width="20" height="4" rx="2" fill="url(#gold-gradient)" />
+    
+    <!-- Balance Beam -->
+    <path d="M15,25 L55,25 C55,25 58,22 35,18 C12,22 15,25 15,25 Z" fill="url(#red-gradient)" />
+    
+    <!-- Scales -->
+    <g transform="translate(15, 25)">
+      <line x1="0" y1="0" x2="-8" y2="15" stroke="url(#gold-gradient)" stroke-width="1.5" />
+      <line x1="0" y1="0" x2="8" y2="15" stroke="url(#gold-gradient)" stroke-width="1.5" />
+      <path d="M-8,15 Q0,25 8,15 Z" fill="none" stroke="url(#gold-gradient)" stroke-width="1.5" />
+    </g>
+    
+    <g transform="translate(55, 25)">
+      <line x1="0" y1="0" x2="-8" y2="15" stroke="url(#gold-gradient)" stroke-width="1.5" />
+      <line x1="0" y1="0" x2="8" y2="15" stroke="url(#gold-gradient)" stroke-width="1.5" />
+      <path d="M-8,15 Q0,25 8,15 Z" fill="none" stroke="url(#gold-gradient)" stroke-width="1.5" />
+    </g>
+  </g>
+</svg>

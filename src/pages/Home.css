@@ -1,0 +1,483 @@
+/* Home.css - Premium Overhaul */
+@import url('https://fonts.googleapis.com/css2?family=Mukta:wght@400;600;800&family=Outfit:wght@400;700;900&display=swap');
+
+:root {
+    --home-bg: #f8fafc;
+    --glass-bg: rgba(255, 255, 255, 0.85);
+    --glass-border: rgba(255, 255, 255, 0.2);
+    --btn-grad: linear-gradient(135deg, #FF9933 0%, #D32F2F 100%);
+}
+
+.home-page {
+    font-family: 'Mukta', 'Outfit', sans-serif;
+    background-color: var(--home-bg);
+    overflow-x: hidden;
+}
+
+/* --- Premium Hero Section --- */
+.hero-premium {
+    position: relative;
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+    background: linear-gradient(rgba(0, 51, 102, 0.8), rgba(0, 51, 102, 0.9)),
+        url('https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: white;
+    padding: 100px 0;
+}
+
+.hero-premium::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 15vh;
+    background: linear-gradient(to top, var(--home-bg), transparent);
+}
+
+.hero-content-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 60px;
+    align-items: center;
+    z-index: 2;
+}
+
+.hero-text-premium h1 {
+    font-size: 5rem;
+    font-weight: 900;
+    line-height: 1.0;
+    margin-bottom: 20px;
+    text-shadow: 2px 4px 10px rgba(0, 0, 0, 0.3);
+    letter-spacing: -2px;
+    text-transform: uppercase;
+}
+
+.hero-sam {
+    color: var(--saffron);
+    font-size: 6rem;
+    display: block;
+}
+
+.hero-ent {
+    color: white;
+    font-size: 3.5rem;
+    display: block;
+    letter-spacing: 8px;
+}
+
+.hero-text-premium .highlight {
+    color: var(--saffron);
+    display: block;
+    font-size: 3.5rem;
+}
+
+.hero-subtitle {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #e2e8f0;
+    margin-bottom: 40px;
+    max-width: 650px;
+}
+
+.hero-cta-group {
+    display: flex;
+    gap: 20px;
+}
+
+.btn-premium {
+    padding: 18px 40px;
+    font-size: 1.1rem;
+    font-weight: 800;
+    border-radius: 50px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-primary-grad {
+    background: var(--btn-grad);
+    color: white;
+    box-shadow: 0 10px 30px rgba(211, 47, 47, 0.4);
+}
+
+.btn-primary-grad:hover {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 15px 40px rgba(211, 47, 47, 0.6);
+}
+
+.btn-outline-white {
+    background: transparent;
+    border: 2px solid white;
+    color: white;
+}
+
+.btn-outline-white:hover {
+    background: white;
+    color: var(--primary);
+}
+
+/* --- Glass Box Hero --- */
+.hero-glass-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 24px;
+    padding: 40px;
+    animation: float 4s ease-in-out infinite;
+}
+
+.quick-contact-box h3 {
+    font-size: 1.8rem;
+    margin-bottom: 25px;
+    color: var(--saffron);
+}
+
+.contact-item-hero {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+}
+
+.icon-circle-hero {
+    width: 45px;
+    height: 45px;
+    background: var(--saffron);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary);
+}
+
+/* --- Bento Grid Services --- */
+.bento-section {
+    padding: 100px 0;
+    background: var(--home-bg);
+}
+
+.bento-grid {
+    display: grid;
+    /*
+    - Applied a consistent **Blue Gradient** background and **Pure White** text across all four service boxes for a uniform, premium look.
+- Ensured all titles (Marathi), subtitles (English), and descriptions are perfectly legible.
+- Added **"Explore More"** buttons to all service tiles to maintain structural consistency.
+
+### 8. Verification Results
+![Service Grid 1-4 Layout](C:\Users\Akshay\.gemini\antigravity\brain\a4a5993a-fa44-4842-9243-a72d71312922\service_grid_layout_1773043526088.png)
+    ![Premium Home Page Overhaul](C:\Users\Akshay\.gemini\antigravity\brain\a4a5993a-fa44-4842-9243-a72d71312922\home_page_sections_view_1773042368733.png)
+    */
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+}
+
+.bento-item {
+    background: linear-gradient(45deg, var(--primary), #1e40af);
+    color: white;
+    border-radius: 24px;
+    padding: 30px;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s ease;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+    min-height: 300px;
+    display: flex;
+    flex-direction: column;
+}
+
+.bento-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    border-color: var(--saffron);
+}
+
+/* --- Final CTA --- */
+.cta {
+    padding: 100px 0;
+    background: linear-gradient(135deg, var(--primary) 0%, #1e293b 100%);
+    color: white;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.cta .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 800px;
+}
+
+.cta h2 {
+    color: white;
+    font-size: 2.8rem;
+    font-weight: 800;
+    margin-bottom: 20px;
+}
+
+.cta p {
+    font-size: 1.2rem;
+    color: #94a3b8;
+    margin-bottom: 30px;
+}
+
+.bento-large {
+    grid-column: span 2;
+    grid-row: span 2;
+    background: linear-gradient(45deg, var(--primary), #1e40af);
+    color: white !important;
+    /* Force overall text to white */
+}
+
+.bento-large .bento-title,
+.bento-large .bento-desc {
+    color: white !important;
+    /* Force title and description to white specifically */
+}
+
+.bento-medium {
+    grid-column: span 2;
+}
+
+.bento-title {
+    font-size: 1.8rem;
+    font-weight: 800;
+    margin-bottom: 10px;
+    z-index: 2;
+    position: relative;
+    color: white !important;
+}
+
+.bento-desc {
+    color: #cbd5e1;
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+    z-index: 2;
+    position: relative;
+}
+
+.bento-icon-bg {
+    position: absolute;
+    bottom: -20px;
+    right: -20px;
+    font-size: 8rem;
+    opacity: 0.1;
+    transition: all 0.4s ease;
+}
+
+.bento-item:hover .bento-icon-bg {
+    transform: scale(1.2) rotate(-15deg);
+    opacity: 0.2;
+}
+
+/* --- Why Choose Us --- */
+.why-us-section {
+    padding: 80px 0;
+    background: white;
+}
+
+.why-us-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+}
+
+.why-us-card {
+    text-align: center;
+    padding: 40px;
+}
+
+.why-icon-l {
+    width: 80px;
+    height: 80px;
+    background: #fffaf5;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 25px;
+    color: var(--saffron);
+    font-size: 2rem;
+    border: 2px solid #fff1e6;
+}
+
+.why-us-card h3 {
+    font-size: 1.5rem;
+    color: var(--primary);
+    margin-bottom: 15px;
+    font-weight: 800;
+}
+
+/* --- Stats Bar --- */
+.stats-premium-bar {
+    background: var(--primary);
+    padding: 60px 0;
+    margin: 40px 0;
+}
+
+.stats-grid-p {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    text-align: center;
+    color: white;
+}
+
+.stat-p-num {
+    font-size: 3rem;
+    font-weight: 900;
+    color: var(--saffron);
+    display: block;
+}
+
+.stat-p-label {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #94a3b8;
+}
+
+/* Animations */
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+@media (max-width: 1200px) {
+    .hero-text-premium h1 {
+        font-size: 3.5rem;
+    }
+}
+
+@media (max-width: 992px) {
+    .hero-content-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .hero-glass-card {
+        display: none;
+    }
+
+    .bento-grid {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+    }
+
+    .bento-large,
+    .bento-medium {
+        grid-column: span 1;
+    }
+
+    .stats-grid-p {
+        grid-template-columns: 1fr 1fr;
+        gap: 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-premium {
+        padding: 60px 0;
+        min-height: auto;
+    }
+
+    .hero-text-premium h1 {
+        font-size: 2.8rem;
+    }
+
+    .hero-sam {
+        font-size: 3.5rem;
+    }
+
+    .hero-ent {
+        font-size: 2rem;
+        letter-spacing: 4px;
+    }
+
+    .hero-text-premium .highlight {
+        font-size: 2.2rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1.1rem;
+        margin-bottom: 30px;
+    }
+
+    .hero-cta-group {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .btn-premium {
+        width: 100%;
+        justify-content: center;
+        padding: 15px 30px;
+    }
+
+    .why-us-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .section-header-centered h2 {
+        font-size: 1.8rem;
+    }
+
+    .cta h2 {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-text-premium h1 {
+        font-size: 2.2rem;
+    }
+
+    .hero-sam {
+        font-size: 2.8rem;
+    }
+
+    .hero-ent {
+        font-size: 1.5rem;
+        letter-spacing: 2px;
+    }
+
+    .bento-item {
+        padding: 20px;
+        min-height: 250px;
+    }
+
+    .bento-title {
+        font-size: 1.4rem;
+    }
+
+    .bento-desc {
+        font-size: 1rem;
+    }
+
+    .stat-p-num {
+        font-size: 2.2rem;
+    }
+
+    .stat-p-label {
+        font-size: 0.9rem;
+    }
+}
