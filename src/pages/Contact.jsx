@@ -65,7 +65,7 @@ const Contact = () => {
 
                     <div className="contact-form-col">
                         <h2 className="contact-heading">संदेश पाठवा (Send Message)</h2>
-                        <form className="premium-form" action="https://formsubmit.co/kadamt283@gmail.com" method="POST">
+                        <form className="premium-form" action="https://formsubmit.co/samenterprisepune@gmail.com" method="POST">
                             <input type="hidden" name="_subject" value="नवीन चौकशी: Sam Enterprises Website" />
                             <input type="hidden" name="_captcha" value="false" />
                             <input type="hidden" name="_template" value="table" />
