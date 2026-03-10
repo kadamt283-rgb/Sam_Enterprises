@@ -2,6 +2,7 @@ import React from 'react';
 import { FaArrowRight as ArrowRight, FaCheckCircle as CheckCircle, FaPhone as Phone, FaEnvelope as Mail, FaFileAlt as FileText, FaCreditCard as CreditCard, FaGlobe as Globe, FaScroll as Scroll, FaShieldAlt, FaBolt, FaSmile, FaUniversity } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
+import ReviewSection from '../components/ReviewSection';
 import './Home.css';
 
 const Home = () => {
@@ -16,7 +17,7 @@ const Home = () => {
                     <div className="hero-text-premium">
                         <h1><span className="hero-sam">SAM</span> <span className="hero-ent">ENTERPRISES</span></h1>
                         <p className="hero-subtitle">
-                            तुमच्या सर्व शासकीय कागदपत्रांसाठी आणि ऑनलाईन सेवांसाठी पुण्याचे सर्वात विश्वसनीय केंद्र.
+                            तुमच्या सर्व शासकीय कागदपत्रांसाठी और ऑनलाईन सेवांसाठी पुण्याचे सर्वात विश्वसनीय केंद्र.
                             (Pune's most trusted center for all government documentation and online services.)
                         </p>
                         <div className="hero-cta-group">
@@ -146,6 +147,9 @@ const Home = () => {
                     </div>
                 </div>
             </section>
+
+            {/* --- Review Section --- */}
+            <ReviewSection />
 
             {/* --- Final CTA --- */}
             <section className="section cta">

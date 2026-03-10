@@ -72,11 +72,11 @@ const Contact = () => {
 
                             <div className="form-group">
                                 <label htmlFor="name">पूर्ण नाव (Full Name)</label>
-                                <input type="text" id="name" name="Customer_Name" placeholder="तुमचे नाव..." required />
+                                <input type="text" id="name" name="Customer_Name" placeholder="Tushar..." required />
                             </div>
                             <div className="form-group">
                                 <label htmlFor="email">ईमेल (Email ID)</label>
-                                <input type="email" id="email" name="Customer_Email" placeholder="tumcha@email.com" required />
+                                <input type="email" id="email" name="Customer_Email" placeholder="kadamt283@email.com" required />
                             </div>
                             <div className="form-group">
                                 <label htmlFor="phone">फोन नंबर (Phone)</label>
