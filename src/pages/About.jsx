@@ -1,10 +1,15 @@
 import React from 'react';
 import { FaBullseye as Target, FaShieldAlt, FaBolt, FaSmile, FaMapMarkerAlt, FaPhone, FaEnvelope } from 'react-icons/fa';
+import { Helmet } from 'react-helmet-async';
 import './About.css';
 
 const About = () => {
     return (
         <div className="about-page">
+            <Helmet>
+                <title>आमच्याबद्दल | Sam Enterprises Pune - १० वर्षांची विश्वासाची परंपरा</title>
+                <meta name="description" content="Sam Enterprises Pune बद्दल माहिती. १० वर्षांपेक्षा जास्त अनुभव आणि ५००००+ सुखी ग्राहक. आमची उद्दिष्टे आणि मूल्ये." />
+            </Helmet>
             <section className="page-hero">
                 <div className="container">
                     <h1><span className="hero-sam">आमच्याबद्दल</span></h1>

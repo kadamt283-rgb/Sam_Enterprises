@@ -11,7 +11,7 @@
 .contact-heading {
     font-size: 1.8rem;
     font-weight: 800;
-    color: white;
+    color: var(--saffron);
     margin-bottom: 25px;
 }
 

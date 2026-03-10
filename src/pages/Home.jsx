@@ -1,11 +1,16 @@
 import React from 'react';
 import { FaArrowRight as ArrowRight, FaCheckCircle as CheckCircle, FaPhone as Phone, FaEnvelope as Mail, FaFileAlt as FileText, FaCreditCard as CreditCard, FaGlobe as Globe, FaScroll as Scroll, FaShieldAlt, FaBolt, FaSmile, FaUniversity } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 import './Home.css';
 
 const Home = () => {
     return (
         <div className="home-page">
+            <Helmet>
+                <title>Sam Enterprises Pune | महा ई-सेवा केंद्र - Rent Agreement, PAN, Aadhaar</title>
+                <meta name="description" content="Sam Enterprises Pune - पुण्यातील विश्वसनीय महा ई-सेवा केंद्र. Registered Rent Agreement, Notary, PAN Card, Aadhaar, Income Certificate आणि सर्व शासकीय सेवा." />
+            </Helmet>
             <section className="hero-premium">
                 <div className="container hero-content-grid">
                     <div className="hero-text-premium">
@@ -45,7 +50,7 @@ const Home = () => {
                                 <div className="icon-circle-hero"><Globe /></div>
                                 <div>
                                     <p>पत्ता (Location)</p>
-                                    <strong>Shop No. 01, Behind Manohar Cloth Center, Hadapsar, Pune</strong>
+                                    <strong>Shop No 05 Archana Apartment, Behind Manohar Cloth Center, Hadapsar, Pune</strong>
                                 </div>
                             </div>
                         </div>

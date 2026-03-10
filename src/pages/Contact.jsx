@@ -1,10 +1,15 @@
 import React from 'react';
 import { FaEnvelope as Mail, FaPhone as Phone, FaMapMarkerAlt as MapPin, FaClock } from 'react-icons/fa';
+import { Helmet } from 'react-helmet-async';
 import './Contact.css';
 
 const Contact = () => {
     return (
         <div className="contact-page">
+            <Helmet>
+                <title>संपर्क करा | Sam Enterprises Pune - हडपसर, पुणे</title>
+                <meta name="description" content="Sam Enterprises Pune ला आजच संपर्क करा. पत्ता: हडपसर पुणे. फोन: +91 9607405060. आम्ही सर्व शासकीय कामांसाठी उपलब्ध आहोत." />
+            </Helmet>
 
             <section className="page-hero">
                 <div className="container">
@@ -37,7 +42,7 @@ const Contact = () => {
                         <div className="bento-item contact-bento">
                             <div className="contact-icon-row">
                                 <div className="contact-icon-box"><MapPin /></div>
-                                <div><h3>पत्ता (Address)</h3><p>Shop No. 01, Behind Manohar Cloth Center,</p><p>Hadapsar, Pune – 411028</p></div>
+                                <div><h3>पत्ता (Address)</h3><p>Shop No 05 Archana Apartment, Behind Manohar Cloth Center,</p><p>Hadapsar, Pune – 411028</p></div>
                             </div>
                         </div>
 
@@ -48,7 +53,6 @@ const Contact = () => {
                             </div>
                         </div>
 
-                        {/* Google Maps Embed */}
                         <div className="map-embed">
                             <iframe
                                 title="Sam Enterprises Location"
@@ -59,34 +63,41 @@ const Contact = () => {
                         </div>
                     </div>
 
-                    {/* Contact Form */}
                     <div className="contact-form-col">
                         <h2 className="contact-heading">संदेश पाठवा (Send Message)</h2>
-                        <form className="premium-form">
+                        <form className="premium-form" action="https://formsubmit.co/kadamt283@gmail.com" method="POST">
+                            <input type="hidden" name="_subject" value="नवीन चौकशी: Sam Enterprises Website" />
+                            <input type="hidden" name="_captcha" value="false" />
+                            <input type="hidden" name="_template" value="table" />
+
                             <div className="form-group">
                                 <label htmlFor="name">पूर्ण नाव (Full Name)</label>
-                                <input type="text" id="name" placeholder="तुमचे नाव..." />
+                                <input type="text" id="name" name="Customer_Name" placeholder="तुमचे नाव..." required />
+                            </div>
+                            <div className="form-group">
+                                <label htmlFor="email">ईमेल (Email ID)</label>
+                                <input type="email" id="email" name="Customer_Email" placeholder="tumcha@email.com" required />
                             </div>
                             <div className="form-group">
                                 <label htmlFor="phone">फोन नंबर (Phone)</label>
-                                <input type="tel" id="phone" placeholder="+91 XXXXX XXXXX" />
+                                <input type="tel" id="phone" name="Customer_Phone" placeholder="+91 XXXXX XXXXX" required />
                             </div>
                             <div className="form-group">
                                 <label htmlFor="service">सेवेचा प्रकार (Service Type)</label>
-                                <select id="service">
+                                <select id="service" name="Service_Requested" required>
                                     <option value="">-- सेवा निवडा (Select Service) --</option>
-                                    <option>Registered Rent Agreement</option>
-                                    <option>PAN Card</option>
-                                    <option>Aadhaar Update</option>
-                                    <option>Income Certificate</option>
-                                    <option>Marriage Certificate</option>
-                                    <option>Gazette Services</option>
-                                    <option>इतर (Other)</option>
+                                    <option value="Registered Rent Agreement">Registered Rent Agreement</option>
+                                    <option value="PAN Card">PAN Card</option>
+                                    <option value="Aadhaar Update">Aadhaar Update</option>
+                                    <option value="Income Certificate">Income Certificate</option>
+                                    <option value="Marriage Certificate">Marriage Certificate</option>
+                                    <option value="Gazette Services">Gazette Services</option>
+                                    <option value="Other">इतर (Other)</option>
                                 </select>
                             </div>
                             <div className="form-group">
                                 <label htmlFor="message">संदेश (Message)</label>
-                                <textarea id="message" rows="5" placeholder="तुमचा प्रश्न किंवा संदेश लिहा..."></textarea>
+                                <textarea id="message" name="Client_Message" rows="5" placeholder="तुमचा प्रश्न किंवा संदेश लिहा..." required></textarea>
                             </div>
                             <button type="submit" className="btn-premium btn-primary-grad" style={{ width: '100%', justifyContent: 'center' }}>
                                 संदेश पाठवा (Send Message)

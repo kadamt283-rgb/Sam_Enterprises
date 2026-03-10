@@ -65,7 +65,7 @@ const Footer = () => {
                     <ul>
                         <li>
                             <FaMapMarkerAlt size={18} />
-                            <span>Shop No. 01, Behind Manohar Cloth Center, Hadapsar, Pune - CSC केंद्र</span>
+                            <span>Shop No 05 Archana Apartment, Behind Manohar Cloth Center, Hadapsar, Pune - CSC केंद्र</span>
                         </li>
                         <li>
                             <FaPhone size={18} />

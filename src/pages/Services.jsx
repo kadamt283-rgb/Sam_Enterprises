@@ -1,134 +1,208 @@
 import React, { useState } from 'react';
 import {
-    FaFileAlt, FaCreditCard, FaGlobe, FaScroll, FaPenNib,
-    FaUsers, FaHeart, FaShieldAlt, FaLeaf, FaUniversity,
-    FaGraduationCap, FaTools, FaFileInvoice, FaLandmark,
-    FaSearch
+    FaSearch, FaIdCard, FaBriefcase, FaShieldAlt,
+    FaScroll, FaFileInvoice, FaFileAlt, FaGlobe, FaCaretDown
 } from 'react-icons/fa';
+import { Helmet } from 'react-helmet-async';
 import './Services.css';
 
 const servicesData = [
     {
-        category: "G2C (शासकीय सेवा)",
-        icon: <FaUniversity />,
+        category: "ओळखपत्रे आणि परवाने (ID & Licenses)",
+        icon: <FaIdCard />,
         services: [
-            {
-                title: "आधार कार्ड (Aadhar Card)",
-                desc: "नवीन नोंदणी, दुरुस्ती आणि कलर प्रिंट (New, Update, Print).",
-                docs: ["ओळख पुरावा (ID Proof)", "पत्ता पुरावा (Address Proof)", "जन्म दाखला (Birth Cert - for new)"]
-            },
             {
                 title: "पॅन कार्ड (PAN Card)",
-                desc: "नवीन पॅन कार्ड, दुरुस्ती आणि रिप्रिंट (New, Correction, Reprint).",
-                docs: ["आधार कार्ड (Aadhar Card)", "फोटो (Photo)", "जुना पॅन (Old PAN - if correction)"]
-            },
-            {
-                title: "मतदान कार्ड (Voter ID)",
-                desc: "नवीन नाव नोंदणी आणि दुरुस्ती (New registration and correction).",
-                docs: ["आधार कार्ड", "वयाचा पुरावा (Age Proof)", "लाईट बिल (Electricity Bill)"]
-            },
-            {
-                title: "उत्पन्न दाखला (Income Certificate)",
-                desc: "१ वर्ष व ३ वर्षांचे तहसीलचे दाखले (1 & 3 year certificates).",
-                docs: ["रेशन कार्ड", "तलाठी अहवाल (Talathi Report)", "स्वयंघोषणापत्र (Self Declaration)"]
-            },
-            {
-                title: "जातीचा दाखला (Caste Certificate)",
-                desc: "सर्व जातींचे शासकीय दाखले (All castes official certificates).",
-                docs: ["रक्त नात्याचा पुरावा (Blood Relation Proof)", "शाळा सोडल्याचा दाखला (LC)", "१९५०/१९६७ चा पुरावा"]
-            },
-            {
-                title: "रहिवासी / राष्ट्रीयत्व (Domicile/Nationality)",
-                desc: "डोमिसाईल आणि राष्ट्रीयत्व दाखला (Residence and Nationality).",
-                docs: ["आधार कार्ड", "रेशन कार्ड", "१० वर्षांचा रहिवासी पुरावा (10 yr Resident Proof)"]
-            },
-            {
-                title: "रेशन कार्ड (Ration Card)",
-                desc: "नाव वाढवणे, कमी करणे आणि दुरुस्ती (Add/Delete name/Correction).",
-                docs: ["जुने रेशन कार्ड", "आधार कार्ड (सर्वांचे)", "रहिवासी पुरावा"]
-            }
-        ]
-    },
-    {
-        category: "Agriculture (कृषी सेवा)",
-        icon: <FaLeaf />,
-        services: [
-            {
-                title: "७/१२ आणि ८ अ उतारा (7/12 & 8A)",
-                desc: "डिजिटल स्वाक्षरित सर्व प्रकारचे उतारे (Digitally signed extracts).",
-                docs: ["गट नंबर (Gat No)", "जिल्हा/तालुका/गाव नाव"]
-            },
-            {
-                title: "मिळकत पत्रिका (Property Card)",
-                desc: "शहरी मिळकत पत्रिका (Urban property card extracts).",
-                docs: ["सी.टी.एस. नंबर (CTS No)", "मालकाचे नाव"]
-            },
-            {
-                title: "पी.एम. किसान (PM-Kisan)",
-                desc: "नोंदणी, KYC आणि स्टेटस चेक (Registration, KYC, Status).",
-                docs: ["७/१२ उतारा", "आधार कार्ड", "बँक पासबुक (Bank Passbook)"]
-            },
-            {
-                title: "पिक विमा (Crop Insurance)",
-                desc: "सर्व हंगामांसाठी विमा सुविधा (Insurance for all seasons).",
-                docs: ["७/१२ उतारा", "आधार कार्ड", "पेरणी पेरा (Sowing Cert)"]
-            }
-        ]
-    },
-    {
-        category: "Legal & Identity (कायदेशीर सेवा)",
-        icon: <FaShieldAlt />,
-        services: [
-            {
-                title: "रजिस्टर रेंट ॲग्रीमेंट (Rent Agreement)",
-                desc: "नोंदणीकृत रजिस्टर भाडेकरार सेवा (Online Registered Rent Agreement).",
-                docs: ["मालक आधार/पॅन", "भाडेकरू आधार/पॅन", "२ साक्षीदार आधार (2 Witness Aadhar)"]
-            },
-            {
-                title: "नोटरी व शपथपत्र (Notary/Affidavit)",
-                desc: "सर्व प्रकारचे प्रतिज्ञापत्र आणि नोटरी (All types of affidavits).",
-                docs: ["आधार कार्ड", "मसुदा (Draft Copy)", "फोटो"]
-            },
-            {
-                title: "गॅझेट (Official Gazette)",
-                desc: "नाव बदलणे, जन्मतारीख किंवा धर्म बदल गॅझेट (Name/DOB change).",
-                docs: ["जुने नाव पुरावा", "नवीन नाव पुरावा", "शपथपत्र (Affidavit)"]
+                desc: "नवीन पॅनकार्ड आणि दुरुस्ती सेवा, कंपनी/HUF/NRI पॅनकार्ड.",
+                docs: [
+                    "नवीन – आधारकार्ड, 2 फोटो",
+                    "दुरुस्ती – आधारकार्ड, 2 फोटो, मॅरेज सर्टिफिकेट / गॅझेट",
+                    "कंपनी / HUF / NRI – पासपोर्ट, रजिस्ट्रेशन सर्टिफिकेट, आधारकार्ड / वस्ती दाखला"
+                ]
             },
             {
                 title: "पासपोर्ट (Passport)",
-                desc: "नवीन पासपोर्ट आणि नूतनीकरण (New application and renewal).",
-                docs: ["आधार कार्ड (पत्ता पुरावा)", "शाळा सोडल्याचा दाखला (LC)", "बँक पासबुक"]
+                desc: "नवीन पासपोर्ट आणि नूतनीकरण (नवीनीकरण) सेवा.",
+                docs: [
+                    "स्वतःचा शाळा सोडल्याचा दाखला",
+                    "जन्म दाखला",
+                    "पासपोर्ट फोटो",
+                    "लाईट बिल / भाडेकरार",
+                    "आधार कार्ड / पॅनकार्ड"
+                ]
             },
             {
-                title: "लग्न प्रमाणपत्र (Marriage Cert)",
-                desc: "लग्नाची शासकीय नोंदणी (Official marriage registration).",
-                docs: ["वर-वधू आधार", "शाळा सोडल्याचा दाखला", "लग्न पत्रिका (Invitation Card)", "३ साक्षीदार"]
+                title: "डोमिसाइल / रहिवासी (Domicile)",
+                desc: "रहिवासी प्रमाणपत्र आणि डोमिसाईल दाखला.",
+                docs: [
+                    "मुलाचा व वडिलांचा शाळा सोडल्याचा दाखला",
+                    "लाईट बिल / घरमालक संमतीपत्र",
+                    "रेशन कार्ड",
+                    "इंडेक्स 2 किंवा CPL",
+                    "आधारकार्ड व फोटो"
+                ]
             },
             {
-                title: "शॉप ॲक्ट (Shop Act)",
-                desc: "गुमास्ता परवाना (Shop and Establishment Licence).",
-                docs: ["आधार कार्ड", "दुकानाचे नाव", "दुकानाचा फोटो (Board Photo)"]
+                title: "रेशन कार्ड (Ration Card)",
+                desc: "नवीन रेशन कार्ड, नावे कमी करणे वा वाढवणे.",
+                docs: [
+                    "पूर्ण कुटुंबाचा आधारकार्ड",
+                    "पासपोर्ट फोटो",
+                    "बँक पासबुक",
+                    "अर्ज"
+                ]
+            },
+            {
+                title: "हयातीचा दाखला (Life Certificate)",
+                desc: "पेन्शनधारकांसाठी जीवन प्रमाणपत्र (Life Certificate).",
+                docs: [
+                    "पेन्शनर कार्ड",
+                    "आधार कार्ड",
+                    "बँक पासबुक"
+                ]
             }
         ]
     },
     {
-        category: "Financial & Utility (आर्थिक व बिल)",
-        icon: <FaFileInvoice />,
+        category: "शासकीय दाखले (Govt. Certificates)",
+        icon: <FaScroll />,
         services: [
             {
-                title: "वीज बिल भरणा (Electricity Bill)",
-                desc: "MSEB व इतर सर्व कंपन्यांचे बिल (All company bill payments).",
-                docs: ["ग्राहक क्रमांक (Consumer No)", "जुने बिल"]
+                title: "जातिचा दाखला (Caste Certificate)",
+                desc: "शासकीय जातीचा दाखला मिळवून देणे.",
+                docs: [
+                    "स्वतःचा शाळा सोडल्याचा दाखला / बोनाफाईड",
+                    "वडिलांचा शाळा सोडल्याचा दाखला व जातिचा दाखला",
+                    "रेशन कार्ड / लाईट बिल / घर भाडेकरार",
+                    "आधार कार्ड / मतदान कार्ड / पॅन कार्ड",
+                    "घरमालक संमती पत्र व लाईट बिल"
+                ]
             },
             {
-                title: "आयकर परतावा (ITR Filing)",
-                desc: "वैयक्तिक आणि व्यावसायिक ITR (Personal and Business ITR).",
-                docs: ["Form 16/16A", "बँक स्टेटमेंट", "पॅन कार्ड"]
+                title: "नॉन क्रिमिलेअर (Non-Creamy Layer)",
+                desc: "नॉन क्रिमिलेअर प्रमाणपत्र.",
+                docs: [
+                    "मुलाचा व वडिलांचा शाळा सोडल्याचा दाखला",
+                    "जातिचा दाखला",
+                    "लाईट बिल / घरमालक संमतीपत्र",
+                    "रेशन कार्ड, आधारकार्ड, फोटो",
+                    "तहसीलदार व उत्पन्न दाखला / वडिलांचा ITR"
+                ]
             },
             {
-                title: "जीएसटी (GST Services)",
-                desc: "नोंदणी आणि रिटर्न फाईलिंग (Registration and Returns).",
-                docs: ["आधार/पॅन", "व्यावसायिक पत्ता पुरावा", "बँक कॅन्सल चेक"]
+                title: "उत्पन्न दाखला (Income Cert.)",
+                desc: "तहसीलदार इनकम सर्टिफिकेट (वार्षिक उत्पन्न).",
+                docs: [
+                    "रेशनकार्ड, आधारकार्ड (संपूर्ण कुटुंब)",
+                    "2 फोटो",
+                    "तलाठी दाखला / जमीन 7/12 / ITR",
+                    "नोकरी असेल तर वेतन प्रमाणपत्र"
+                ]
+            },
+            {
+                title: "EWS सर्टिफिकेट (EWS Cert.)",
+                desc: "आर्थिक दृष्ट्या दुर्बल घटकांचे प्रमाणपत्र.",
+                docs: [
+                    "स्वतःचा शाळा सोडल्याचा दाखला",
+                    "वडिलांचा शाळा सोडल्याचा दाखला",
+                    "रेशन कार्ड / लाईट बिल",
+                    "आधार कार्ड / मतदान कार्ड / पॅन कार्ड",
+                    "प्रतिज्ञापत्र"
+                ]
+            },
+            {
+                title: "30% महिला आरक्षण",
+                desc: "महिलांसाठी ३० टक्के नोकरी आरक्षण प्रमाणपत्र.",
+                docs: [
+                    "मुलीचा शाळा सोडल्याचा दाखला",
+                    "वडिलांचा शाळा सोडल्याचा दाखला",
+                    "3 वर्षाचा रहिवासी दाखला",
+                    "रेशन कार्ड / लाईट बिल / कर पावती",
+                    "आधार कार्ड / मतदान कार्ड / पॅन कार्ड"
+                ]
+            }
+        ]
+    },
+    {
+        category: "व्यवसाय आणि कर (Business & Tax)",
+        icon: <FaBriefcase />,
+        services: [
+            {
+                title: "शॉप अॅक्ट (Shop Act)",
+                desc: "नवीन व्यवसाय सुरू करण्यासाठी गुमास्ता परवाना.",
+                docs: [
+                    "व्यवसायाचे नाव",
+                    "आधारकार्ड / पॅनकार्ड",
+                    "लाईट बिल / टॅक्स पावती"
+                ]
+            },
+            {
+                title: "उद्यम आधार (Udyam Aadhar)",
+                desc: "MSME उद्योग आधार नोंदणी.",
+                docs: [
+                    "व्यवसायाचे नाव",
+                    "आधारकार्ड",
+                    "पॅनकार्ड / बँक पासबुक",
+                    "मोबाईल नंबर"
+                ]
+            },
+            {
+                title: "GST रजिस्ट्रेशन (GST Reg.)",
+                desc: "नवीन वस्तू आणि सेवा कर (GST) क्रमांक.",
+                docs: [
+                    "आधारकार्ड / पॅनकार्ड",
+                    "जागेचे बिल",
+                    "रेंट अॅग्रीमेंट"
+                ]
+            }
+        ]
+    },
+    {
+        category: "नोंदणी आणि कायदेशीर (Legal & Civil)",
+        icon: <FaShieldAlt />,
+        services: [
+            {
+                title: "गॅझेट / राजपत्र (Gazette)",
+                desc: "नाव, स्पेलिंग किंवा जन्मतारीख बदलण्याबाबत शासन राजपत्र.",
+                docs: [
+                    "आधारकार्ड / पॅनकार्ड",
+                    "रेशनकार्ड / लाईट बिल",
+                    "लग्नानंतर नाव बदल",
+                    "घटस्फोट / मुलीचा घटस्फोट",
+                    "1 कलर फोटो"
+                ]
+            },
+            {
+                title: "मॅरेज सर्टिफिकेट (Marriage Cert.)",
+                desc: "विवाह शासकीय नोंदणी व प्रमाणपत्र.",
+                docs: [
+                    "नवरा-बायको प्राथमिक ओळखपत्र",
+                    "लाईट बिल / अॅड्रेस",
+                    "पासपोर्ट साईज फोटो",
+                    "लग्नाचा फोटो 3",
+                    "साक्षीदार 3 (आधारकार्ड व फोटो)"
+                ]
+            },
+            {
+                title: "नोटरी (Notary & Affidavit)",
+                desc: "प्रतिज्ञापत्र (Affidavit) आणि स्टॅम्प पेपर नोटरी.",
+                docs: [
+                    "स्टॅम्प पेपर",
+                    "आधार कार्ड",
+                    "फोटो",
+                    "माहिती (ड्राफ्ट)"
+                ]
+            },
+            {
+                title: "पोलिस व्हेरिफिकेशन (PCC)",
+                desc: "पोलिस क्लिअरन्स सर्टिफिकेट आणि चारित्र्य पडताळणी.",
+                docs: [
+                    "आधार कार्ड / जन्म दाखला",
+                    "आधारकार्ड / रेशनकार्ड",
+                    "2 पासपोर्ट फोटो",
+                    "रहिवासी पुरावा",
+                    "कंपनी लेटरहेड"
+                ]
             }
         ]
     }
@@ -152,15 +226,26 @@ const Services = () => {
 
     return (
         <div className="services-page">
-            <section className="page-hero">
-                <div className="container">
-                    <h1><span className="hero-sam">आमच्या सेवा</span></h1>
-                    <p className="page-hero-sub">Our Services | ३०+ शासकीय सेवा एकाच ठिकाणी उपलब्ध (30+ Government Services)</p>
-                    <div className="search-bar-premium">
-                        <FaSearch className="search-icon-p" />
+            <Helmet>
+                <title>Premium Services | Sam Enterprises Pune - All Gov Services</title>
+                <meta name="description" content="Premium government services including PAN Card, Passport, Domicile, Non-Creamy Layer, GST & more in Pune." />
+            </Helmet>
+
+            {/* Premium Corporate Hero Section */}
+            <section className="services-hero-premium">
+                <div className="hero-overlay"></div>
+                <div className="container relative-z">
+                    <span className="hero-badge">Expert Consultancy</span>
+                    <h1 className="hero-title-premium">All <span className="highlight-text">Services</span></h1>
+                    <p className="hero-subtitle-premium">
+                        आमच्या सर्व शासकीय आणि कायदेशीर सेवा (All Government & Legal Services).<br />
+                        सर्वाधिक विश्वासार्ह आणि जलद सेवा (Most Reliable & Fastest Service Delivery).
+                    </p>
+                    <div className="search-bar-elite">
+                        <FaSearch className="search-icon-elite" />
                         <input
                             type="text"
-                            placeholder="सेवा शोधा... (Search services)"
+                            placeholder="कोणती सेवा हवी आहे ते शोधा... (Search for a service)"
                             value={searchTerm}
                             onChange={(e) => setSearchTerm(e.target.value)}
                         />
@@ -168,50 +253,72 @@ const Services = () => {
                 </div>
             </section>
 
-            <div className="container">
-                {filteredServices.map((section, idx) => (
-                    <div className="service-category-section" key={idx}>
-                        <div className="category-title">
-                            <span className="cat-icon">{section.icon}</span>
-                            <h2>{section.category}</h2>
-                        </div>
-                        <div className="services-grid-new">
-                            {section.services.map((service, sIdx) => {
-                                const serviceId = `${idx}-${sIdx}`;
-                                const isExpanded = expandedService === serviceId;
+            <div className="container services-main-container">
+                {filteredServices.length === 0 ? (
+                    <div className="no-results-found">
+                        <p>No services found matching your search. Please try another keyword.</p>
+                    </div>
+                ) : (
+                    filteredServices.map((section, idx) => (
+                        <div className="elite-category-section" key={idx}>
+                            <div className="elite-category-header">
+                                <div className="elite-icon-wrapper">{section.icon}</div>
+                                <h2>{section.category}</h2>
+                            </div>
 
-                                return (
-                                    <div className={`service-item-card ${isExpanded ? 'expanded' : ''}`} key={sIdx}>
-                                        <div className="service-card-main">
-                                            <div className="service-dot"></div>
-                                            <div className="service-details">
-                                                <h4>{service.title}</h4>
-                                                <p>{service.desc}</p>
-                                                <button
-                                                    className="view-docs-btn"
-                                                    onClick={() => toggleDocs(serviceId)}
-                                                >
-                                                    {isExpanded ? 'माहिती बंद करा (Hide Documents)' : 'कागदपत्रे पहा (View Documents)'}
-                                                </button>
+                            <div className="elite-services-grid">
+                                {section.services.map((service, sIdx) => {
+                                    const serviceId = `${idx}-${sIdx}`;
+                                    const isExpanded = expandedService === serviceId;
+
+                                    return (
+                                        <div className={`elite-service-card ${isExpanded ? 'card-expanded' : ''}`} key={sIdx}>
+                                            <div className="elite-card-content">
+                                                <div className="elite-card-indicator"></div>
+                                                <div className="elite-card-details">
+                                                    <h3 className="elite-card-title">{service.title}</h3>
+                                                    <p className="elite-card-desc">{service.desc}</p>
+                                                    <button
+                                                        className={`elite-action-btn ${isExpanded ? 'btn-active' : ''}`}
+                                                        onClick={() => toggleDocs(serviceId)}
+                                                    >
+                                                        {isExpanded ? 'Hide Documents' : 'View Documents'}
+                                                        <FaCaretDown className={`btn-caret ${isExpanded ? 'caret-up' : ''}`} />
+                                                    </button>
+                                                </div>
+                                            </div>
+
+                                            {/* Expandable Document List */}
+                                            <div className="elite-docs-container" style={{ maxHeight: isExpanded ? '500px' : '0' }}>
+                                                <div className="elite-docs-inner">
+                                                    <h4 className="docs-heading">Required Documents:</h4>
+                                                    <ul className="docs-list-premium">
+                                                        {service.docs.map((doc, dIdx) => (
+                                                            <li key={dIdx}>
+                                                                <span className="check-circle"></span>
+                                                                {doc}
+                                                            </li>
+                                                        ))}
+                                                    </ul>
+                                                </div>
                                             </div>
                                         </div>
-                                        {isExpanded && (
-                                            <div className="docs-list-expanded">
-                                                <h5>लागणारी कागदपत्रे (Required Documents):</h5>
-                                                <ul>
-                                                    {service.docs.map((doc, dIdx) => (
-                                                        <li key={dIdx}>{doc}</li>
-                                                    ))}
-                                                </ul>
-                                            </div>
-                                        )}
-                                    </div>
-                                );
-                            })}
+                                    );
+                                })}
+                            </div>
                         </div>
-                    </div>
-                ))}
+                    ))
+                )}
             </div>
+
+            {/* Call to action */}
+            <section className="services-cta-premium">
+                <div className="container">
+                    <h2>Need Help Choosing a Service?</h2>
+                    <p>Our expert consultants are ready to assist you bridging the gap between complexity and ease.</p>
+                    <a href="/contact" className="premium-btn-primary">Contact Us Now</a>
+                </div>
+            </section>
         </div>
     );
 };
